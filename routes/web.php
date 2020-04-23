@@ -19,3 +19,14 @@ Auth::routes([
 ]);
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('/product/{product}', 'HomeController@store')->name('store');
+Route::get('/product/{product}/detail', 'HomeController@detail')->name('detail');
+
+Route::get('/cart', 'CartController@index')->name('cart');
+Route::post('/cart/update', 'CartController@update')->name('cart.update');
+Route::get('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
+
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+
+Route::get('/order/{order}', 'OrderController@index')->name('order');
+Route::post('/order', 'OrderController@store')->name('order.store');
