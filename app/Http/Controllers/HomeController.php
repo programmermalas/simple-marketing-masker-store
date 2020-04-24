@@ -39,7 +39,7 @@ class HomeController extends Controller
         $product    = Product::where('slug', $slug)->first();
 
         $cart       = Cart::get($product->id);
-        $price      = 0;
+        $price      = $product->price_a;
         $quantity   = $request->quantity;
 
         if ($cart) {
@@ -50,8 +50,6 @@ class HomeController extends Controller
             $price  = $product->price_c;
         } elseif ($quantity >= 100 && $quantity < 1000) {
             $price  = $product->price_b;
-        } else {
-            $price  = $product->price_a;
         }
 
         Cart::add([
