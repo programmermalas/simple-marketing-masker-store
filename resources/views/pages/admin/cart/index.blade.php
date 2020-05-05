@@ -51,7 +51,7 @@
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <input name="quantities[]" type="number" class="form-control @if ($errors->has('quantity')) is-invalid @endif" value="{{ $cart->quantity }}" aria-describedby="quantity" min="5" step="5">
+                                        <input name="quantities[]" type="number" class="form-control @if ($errors->has('quantity')) is-invalid @endif" value="{{ $cart->quantity }}" aria-describedby="quantity" min="1" step="1">
                                     </div>
                                 </td>
                                 <td>
